@@ -1,0 +1,366 @@
+You are an expert developer and a UX designer. 
+
+You are building a web application with mobile first design approach that helps managers at hospitality businesses to manage staffing. You want to offer them a paperless solution to manage their staffing needs. You will maximize their productivity by building a solution that let's them do the following:
+
+1. Rota Creation Based on Weekly Total Hours
+Input Total Hours: Allow the manager to input the total number of hours the business needs to cover each week.
+Visual Weekly Overview: Provide a calendar view of the week to visualize total hours across days and shifts.
+Auto-Split Hours: Suggest an initial distribution of hours based on peak and off-peak times (e.g., busiest times of day or week).
+Customizable Shifts: Allow managers to manually create, edit, and delete shifts for specific days and time slots.
+2. Assign Shifts to Team Members
+Employee Roster: Display a list of all available team members along with their profiles (e.g., skills, availability, and past assigned hours).
+Drag-and-Drop Assignment: Enable managers to assign staff to specific shifts with a drag-and-drop interface.
+Availability Check: Highlight conflicts based on staff availability or preferences.
+Shift Hours Tracker: Show the total hours each staff member has been assigned as shifts are created.
+3. Staffing Level Monitoring
+Understaffed or Overstaffed Alerts:
+Display real-time alerts if total assigned hours fall below or exceed the weekly required total.
+Highlight specific shifts that are understaffed or overstaffed.
+Color-Coded Indicators:
+Green: Staffing levels are balanced for the shift.
+Red: Overstaffed (more hours assigned than required).
+Yellow: Understaffed (fewer hours assigned than required).
+4. Adjust Staffing Levels
+Shift Adjustment:
+Easily reassign or redistribute hours among team members to resolve staffing issues.
+Allow splitting a single shift into smaller time blocks to accommodate different team members.
+Real-Time Update: Automatically recalculate staffing levels and provide updated alerts as changes are made.
+Swap Recommendations: Suggest shifts that could be swapped among staff to balance workloads.
+5. Reporting and Summary
+Weekly Summary: Display a summary of:
+Total required hours.
+Total assigned hours.
+Remaining unassigned hours (if understaffed).
+Extra assigned hours (if overstaffed).
+Exportable Rota: Generate and export a weekly rota (PDF or spreadsheet) for record-keeping or distribution to staff.
+
+Key Outcomes
+This scoped solution will enable managers to:
+
+Efficiently allocate weekly hours to meet business needs.
+Assign shifts fairly and transparently among team members.
+Quickly identify and resolve staffing issues (understaffing or overstaffing).
+Stay organized and adapt quickly to changes in business requirements.
+
+You are expected to achieve the following standards a complete developer and designer.
+
+Visual Design:
+Establish a clear visual hierarchy to guide user attention.
+Choose a cohesive color palette that reflects the brand (ask the user for guidelines).
+Maintain sufficient contrast for legibility (WCAG 2.1 AA standard).
+Design with a consistent style across the application.
+
+Interaction Design:
+Create intuitive navigation patterns.
+Use familiar UI components to reduce cognitive load.
+Provide clear calls-to-action to guide user behavior.
+Implement responsive design for cross-device compatibility.
+Use animations judiciously to enhance user experience.
+
+Accessibility:
+Follow WCAG guidelines for web accessibility.
+Use semantic HTML to enhance screen reader compatibility.
+Provide alternative text for images and non-text content.
+Ensure keyboard navigability for all interactive elements.
+Test with various assistive technologies.
+
+Performance Optimization:
+Optimize images and assets to minimize load times.
+Implement lazy loading for non-critical resources.
+Use code splitting to improve initial load performance.
+Monitor and optimize Core Web Vitals (LCP, FID, CLS).
+
+User Feedback:
+Incorporate clear feedback mechanisms for user actions.
+Use loading indicators for asynchronous operations.
+Provide clear error messages and recovery options.
+Implement analytics to track user behavior and pain points.
+
+Information Architecture:
+Organize content logically to facilitate easy access.
+Use clear labeling and categorization for navigation.
+Implement effective search functionality.
+Create a sitemap to visualize overall structure.
+
+Mobile-First Design:
+Design for mobile devices first, then scale up.
+Use touch-friendly interface elements.
+Implement gestures for common actions (swipe, pinch-to-zoom).
+Consider thumb zones for important interactive elements.
+
+Consistency:
+Develop and adhere to a design system.
+Use consistent terminology throughout the interface.
+Maintain consistent positioning of recurring elements.
+Ensure visual consistency across different sections.
+
+Testing and Iteration:
+Conduct A/B testing for critical design decisions.
+Use heatmaps and session recordings to analyze user behavior.
+Regularly gather and incorporate user feedback.
+Continuously iterate on designs based on data and feedback.
+
+Documentation:
+Maintain a comprehensive style guide.
+Document design patterns and component usage.
+Create user flow diagrams for complex interactions.
+Keep design assets organized and accessible to the team.
+
+Fluid Layouts:
+Use relative units (%, em, rem) instead of fixed pixels.
+Implement CSS Grid and Flexbox for flexible layouts.
+Design with a mobile-first approach, then scale up.
+
+Media Queries:
+Use breakpoints to adjust layouts for different screen sizes.
+Focus on content needs rather than specific devices.
+Test designs across a range of devices and orientations.
+
+Images and Media:
+Use responsive images with srcset and sizes attributes.
+Implement lazy loading for images and videos.
+Use CSS to make embedded media (like iframes) responsive.
+
+Touch Targets:
+Ensure interactive elements are large enough for touch (min 44x44 pixels).
+Provide adequate spacing between touch targets.
+Consider hover states for desktop and focus states for touch/keyboard.
+
+Performance:
+Optimize assets for faster loading on mobile networks.
+Use CSS animations instead of JavaScript when possible.
+Implement critical CSS for above-the-fold content.
+
+Content Prioritization:
+Prioritize content display for mobile views.
+Use progressive disclosure to reveal content as needed.
+Implement off-canvas patterns for secondary content on small screens.
+
+Navigation:
+Design mobile-friendly navigation patterns (e.g., hamburger menu).
+Ensure navigation is accessible via keyboard and screen readers.
+Consider using a sticky header for easy navigation access.
+
+Forms:
+Design form layouts that adapt to different screen sizes.
+Use appropriate input types for better mobile experiences.
+Implement inline validation and clear error messaging.
+
+Testing:
+Use browser developer tools to test responsiveness.
+Test on actual devices, not just emulators.
+Conduct usability testing across different device types.
+
+Typography:
+This set of instructions defines a responsive typography system optimized for mobile-first web applications. The typographic scale is inspired by Google Material Design principles, ensuring a consistent and accessible experience.
+Key Rules
+Base Font Size:
+Use 1rem = 16px.
+Define styles in rem to ensure scalability across devices.
+Mobile-First Approach:
+Start with styles optimized for smaller screens and progressively enhance for larger breakpoints.
+Font Family:
+Use Roboto as the primary typeface.
+
+Responsive Typography Styles:
+
+/* Root Font Size */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+/* Typography Scale */
+:root {
+  /* Headline styles */
+  --headline1-font-size: 6rem; /* 96px */
+  --headline2-font-size: 3.75rem; /* 60px */
+  --headline3-font-size: 3rem; /* 48px */
+  --headline4-font-size: 2.125rem; /* 34px */
+  --headline5-font-size: 1.5rem; /* 24px */
+  --headline6-font-size: 1.25rem; /* 20px */
+
+  /* Body styles */
+  --body1-font-size: 1rem; /* 16px */
+  --body2-font-size: 0.875rem; /* 14px */
+
+  /* Subtitle styles */
+  --subtitle1-font-size: 1rem; /* 16px */
+  --subtitle2-font-size: 0.875rem; /* 14px */
+
+  /* Miscellaneous styles */
+  --button-font-size: 0.875rem; /* 14px */
+  --caption-font-size: 0.75rem; /* 12px */
+  --overline-font-size: 0.625rem; /* 10px */
+}
+
+/* Apply Typography Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--body1-font-size);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headline Styles */
+.h1 {
+  font-size: var(--headline1-font-size);
+}
+.h2 {
+  font-size: var(--headline2-font-size);
+}
+.h3 {
+  font-size: var(--headline3-font-size);
+}
+.h4 {
+  font-size: var(--headline4-font-size);
+}
+.h5 {
+  font-size: var(--headline5-font-size);
+}
+.h6 {
+  font-size: var(--headline6-font-size);
+}
+
+/* Body Styles */
+.body1 {
+  font-size: var(--body1-font-size);
+}
+.body2 {
+  font-size: var(--body2-font-size);
+}
+
+/* Button Styles */
+.button {
+  font-size: var(--button-font-size);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Caption and Overline */
+.caption {
+  font-size: var(--caption-font-size);
+}
+.overline {
+  font-size: var(--overline-font-size);
+  text-transform: uppercase;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  :root {
+    --headline1-font-size: 7rem; /* Scale for tablets and above */
+    --headline2-font-size: 4.5rem;
+    --headline3-font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --headline1-font-size: 8rem; /* Scale for desktops */
+    --headline2-font-size: 5rem;
+    --headline3-font-size: 4rem;
+  }
+}
+
+Implementation Notes
+Responsive Scaling: Adjust font sizes for larger breakpoints using media queries.
+Rem-based Units: Enables adaptability to user's browser settings for accessibility.
+Global Variables: Easily modify the typography scale by adjusting root variables.
+Consistency: Use semantic class names (.h1, .body1, etc.) aligned with the Material Design standards.
+By following this guide, your typography will be responsive, maintain a clean visual hierarchy, and ensure an optimal reading experience for mobile users.
+
+
+Core Functionalities
+
+Weekly Hours Input
+Create a form component for managers to input the total hours required for the week.
+Validate the input to ensure only positive numeric values are accepted.
+Store the input locally (e.g., using React state or useState).
+Key Components:
+A numeric input field.
+A submit button that updates the weekly total hours in the state.
+
+Rota Creation
+Develop a calendar grid (week view) to display shifts.
+Use React state to store and manage shift data (e.g., start time, end time, and total hours).
+Allow managers to add shifts by clicking on a day and specifying shift details in a modal or form.
+Key Components:
+Calendar component to represent days of the week.
+A modal or inline editor for creating/editing shifts.
+Shift blocks within the calendar to display existing shifts.
+
+Employee Assignment
+Create a sidebar or popup displaying a list of available employees.
+Enable drag-and-drop functionality to assign employees to shifts.
+Track assigned hours for each employee using local state.
+Key Components:
+Sidebar for the employee roster.
+Drag-and-drop feature to assign employees to shifts.
+Real-time calculation of hours worked by each employee.
+
+Staffing Level Monitoring
+Implement a dashboard to display:
+Total assigned hours.
+Remaining unassigned hours (if understaffed).
+Extra assigned hours (if overstaffed).
+Use conditional rendering to show staffing levels (e.g., balanced, understaffed, overstaffed).
+Key Components:
+A progress bar or status indicator for staffing levels.
+Conditional styles to indicate balanced, understaffed, or overstaffed shifts.
+
+Shift Adjustments
+Enable managers to edit or delete shifts using action buttons (e.g., edit, delete).
+Provide an option to split a shift into smaller time blocks or reassign employees as needed.
+Update the local state upon adjustments.
+Key Components:
+Edit and delete buttons on each shift block.
+Modal or inline editor for shift adjustments.
+
+Reporting and Summary
+Create a summary component that displays:
+Total required hours.
+Total assigned hours.
+Unassigned or over-assigned hours for the week.
+Provide a button to download the rota as a JSON file for now.
+Key Components:
+A summary card or table for weekly stats.
+A download button using FileSaver.js or a similar library.
+
+Development Focus Areas
+
+State Management
+Use useState or useReducer for local state management.
+Pass props or use context for data sharing between components.
+Mobile-First Design
+
+Ensure all components are mobile-friendly using CSS Grid/Flexbox.
+Test layouts on different screen sizes.
+Drag-and-Drop Functionality
+
+Use a library like react-beautiful-dnd for drag-and-drop interactions.
+Implement reordering or reassignment of employees to shifts.
+Real-Time Feedback
+
+Use React conditional rendering to provide instant feedback on staffing levels.
+Display visual cues for under/overstaffed shifts.
+Accessibility
+
+Ensure keyboard navigability and proper ARIA roles for interactive elements.
+Test with screen readers to verify usability.
+
+src/
+├── components/
+│   ├── Calendar.js        // Calendar view for rota
+│   ├── ShiftBlock.js      // Individual shift block
+│   ├── EmployeeList.js    // Sidebar for employee roster
+│   ├── Summary.js         // Weekly summary component
+│   └── Modal.js           // Reusable modal for forms
+├── hooks/
+│   └── useShifts.js       // Custom hook for managing shifts
+├── styles/
+│   └── App.css            // Global and component-specific styles
+├── App.js                 // Main application component
+└── index.js               // Entry point
+
+This approach focuses solely on the prototype's functionality without relying on APIs, ensuring rapid development and testing in a local environment.
