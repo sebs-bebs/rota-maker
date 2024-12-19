@@ -4,10 +4,10 @@ import { styled } from '@mui/material/styles';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
-const ShiftContainer = styled(Paper)(({ theme }) => ({
+const ShiftContainer = styled(Paper)(({ theme, color }) => ({
   padding: theme.spacing(1),
   margin: theme.spacing(0.5),
-  backgroundColor: theme.palette.primary.light,
+  backgroundColor: color || theme.palette.primary.light,
   color: '#ffffff',
   display: 'flex',
   justifyContent: 'space-between',
@@ -31,7 +31,7 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
 
 const ShiftBlock = ({ shift, onEdit, onDelete }) => {
   return (
-    <ShiftContainer elevation={1}>
+    <ShiftContainer elevation={1} color={shift.staffColor}>
       <Box>
         <Typography variant="caption" display="block">
           {shift.startTime} - {shift.endTime}

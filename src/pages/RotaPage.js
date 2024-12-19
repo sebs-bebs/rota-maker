@@ -4,7 +4,12 @@ import Calendar from '../components/Calendar';
 
 const RotaPage = ({ shifts, onCellClick }) => {
   return (
-    <Box sx={{ pb: 7 }}> {/* Add padding bottom for navigation bar */}
+    <Box sx={{ 
+      pb: 7,
+      height: 'calc(100vh - 120px)', // Account for bottom nav and padding
+      display: 'flex',
+      flexDirection: 'column'
+    }}> 
       <Calendar 
         shifts={shifts}
         onCellClick={onCellClick}

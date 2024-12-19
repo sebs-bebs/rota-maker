@@ -11,6 +11,8 @@ import {
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 const StaffListContainer = styled(Paper)(({ theme }) => ({
   margin: theme.spacing(2),
@@ -20,6 +22,16 @@ const StaffListContainer = styled(Paper)(({ theme }) => ({
   boxShadow: 'none',
 }));
 
+const ColorDot = styled(Box)(({ color }) => ({
+  width: '12px',
+  height: '12px',
+  borderRadius: '50%',
+  backgroundColor: color,
+  marginRight: '8px',
+  display: 'inline-block',
+  verticalAlign: 'middle',
+}));
+
 const StaffList = ({ staffMembers, onEdit, onDelete }) => {
   return (
     <StaffListContainer>
@@ -27,39 +39,37 @@ const StaffList = ({ staffMembers, onEdit, onDelete }) => {
         Staff Members
       </Typography>
       <List>
-        {staffMembers.map((staff) => (
-          <ListItem key={staff.email} divider>
+        {staffMembers.map((staff, index) => (
+          <ListItem key={index} divider>
             <ListItemText
-              primary={`${staff.firstName} ${staff.lastName}`}
+              primary={
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <ColorDot color={staff.color} />
+                  <Typography>{`${staff.firstName} ${staff.lastName}`}</Typography>
+                </Box>
+              }
               secondary={
                 <Box sx={{ mt: 1 }}>
-                  <Typography variant="body2">{staff.email}</Typography>
-                  <Typography variant="body2">{staff.phone}</Typography>
-                  <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {staff.skills.map((skill) => (
-                      <Chip 
-                        key={skill} 
-                        label={skill} 
-                        size="small"
-                        sx={{
-                          backgroundColor: 'rgba(26, 115, 232, 0.08)',
-                          color: 'primary.main',
-                          '&:hover': {
-                            backgroundColor: 'rgba(26, 115, 232, 0.12)',
-                          },
-                        }}
-                      />
-                    ))}
-                  </Box>
+                  <Chip 
+                    label={staff.role}
+                    size="small"
+                    sx={{
+                      backgroundColor: 'rgba(129, 212, 250, 0.15)',
+                      color: '#81d4fa',
+                      '&:hover': {
+                        backgroundColor: 'rgba(129, 212, 250, 0.25)',
+                      },
+                    }}
+                  />
                 </Box>
               }
             />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="edit" onClick={() => onEdit(staff)}>
-                <span role="img" aria-label="edit">✏️</span>
+                <EditRoundedIcon />
               </IconButton>
               <IconButton edge="end" aria-label="delete" onClick={() => onDelete(staff)}>
-                <span role="img" aria-label="delete">🗑️</span>
+                <DeleteRoundedIcon />
               </IconButton>
             </ListItemSecondaryAction>
           </ListItem>
